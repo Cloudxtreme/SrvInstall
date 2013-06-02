@@ -8,13 +8,8 @@ PHP_VERSION=5.4.15
 MYSQL_VERSION=5.6.11
 MYSQL_PASSWORD="YOURPWHERE"
 PCRE_VERSION=8.32
-NGINX_PARAMS="--with-http_ssl_module --with-pcre=pcre-8.32 --with-http_realip_module 
---with-http_gzip_static_module --without-http_ssi_module --without-http_userid_module 
---without-http_auth_basic_module --without-http_geo_module --without-http_map_module 
---without-http_split_clients_module --without-http_uwsgi_module --without-http_scgi_module 
---without-http_browser_module"
-PHP_PARAMS="--with-mysql --enable-fpm --with-zlib --with-pcre --with-pear --enable-fastcgi 
--with-mcrypt --enable-cli --with-gd"
+NGINX_PARAMS="--with-http_ssl_module --with-pcre=pcre-8.32 --with-http_realip_module --with-http_gzip_static_module --without-http_ssi_module --without-http_userid_module --without-http_auth_basic_module --without-http_geo_module --without-http_map_module --without-http_split_clients_module --without-http_uwsgi_module --without-http_scgi_module --without-http_browser_module"
+PHP_PARAMS="--with-mysql --enable-fpm --with-zlib --with-pcre --with-pear --enable-fastcgi -with-mcrypt --enable-cli --with-gd"
 
 
 
@@ -47,8 +42,7 @@ cd ~/src
 ##
 wget -O - "http://nginx.org/download/nginx-$NGINX_VERSION.tar.gz" |tar xz
 cd nginx-$NGINX_VERSION
-wget -O - "ftp://ftp.csx.cam.ac.uk/pub/software/programming/pcre/pcre-$PCRE_VERSION.tar.gz" 
-|tar xz
+wget -O - "ftp://ftp.csx.cam.ac.uk/pub/software/programming/pcre/pcre-$PCRE_VERSION.tar.gz" |tar xz
 ./configure $NGINX_PARAMS --with-cc-opt="$CFLAGS"
 make && make install
 mkdir /usr/local/nginx/sites-enabled
@@ -56,6 +50,7 @@ mkdir /var/{log,www}
 git clone https://github.com/martijngonlag/Nginx-config.git
 cp Nginx-config/nginx /etc/init.d/nginx
 chmod +x /etc/init.d/nginx
+ln -s $ORIGINAL_DIRECTORY/nginx.conf /usr/local/nginx/conf/
 cd ..
 
 
