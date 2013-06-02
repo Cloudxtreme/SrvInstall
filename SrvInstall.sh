@@ -19,8 +19,7 @@ PHP_PARAMS="--with-mysql --enable-fpm --with-zlib --with-pcre --with-pear --enab
 
 ### DO NOT EDIT BELOW HERE
 ORIGINAL_DIRECTORY=$PWD
-CFLAGS="-fstack-protector-all -fomit-frame-pointer -Os -pipe -falign-functions=64 
--falign-loops=32 -fforce-addr -ffast-math"
+CFLAGS="-fstack-protector-all -fomit-frame-pointer -Os -pipe -falign-functions=64 -falign-loops=32 -fforce-addr -ffast-math"
 
 # Run update
 apt-get update && apt-get upgrade
