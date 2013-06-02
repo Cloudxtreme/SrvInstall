@@ -88,6 +88,8 @@ ln -s /tmp/mysql.sock /var/run/mysqld/mysqld.sock
 ln -s /usr/local/mysql/bin/mysql /usr/bin
 cp support-files/my-default.cnf /etc/mysql/my.cnf
 cp support-files/mysql.server /etc/init.d/mysql
+mkdir /var/run/mysqld
+ln -s /tmp/mysql.sock /var/run/mysqld/mysqld.sock
 mysqladmin -u root password $MYSQL_PASSWORD
 /usr/local/mysql/bin/mysql_secure_installation
 
