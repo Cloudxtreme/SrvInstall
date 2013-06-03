@@ -48,6 +48,7 @@ mkdir /var/{log,www}
 git clone https://github.com/martijngonlag/Nginx-config.git
 cp Nginx-config/nginx /etc/init.d/nginx
 chmod +x /etc/init.d/nginx
+rm -rf Nginx-config
 ln -s $ORIGINAL_DIRECTORY/nginx.conf /usr/local/nginx/conf/
 cd ..
 
