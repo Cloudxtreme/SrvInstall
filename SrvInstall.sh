@@ -29,8 +29,7 @@ apt-get update && apt-get upgrade
 # Purge non-required software
 apt-get purge apache2 bind9 sendmail
 # Install dependencies
-apt-get install git build-essential libssl-dev libxml2-dev libaio1 libaio-dev libncurses5 
-libncurses5-dev cmake libmcrypt-dev libpng-dev
+apt-get install git build-essential libssl-dev libxml2-dev libaio1 libaio-dev libncurses5 libncurses5-dev cmake libmcrypt-dev libpng-dev
 
 mkdir ~/src
 cd ~/src
