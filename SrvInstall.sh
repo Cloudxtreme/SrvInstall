@@ -3,11 +3,11 @@
 ##
 # CONFIGURE THE SCRIPT HERE
 ##
-NGINX_VERSION=1.5.0
-PHP_VERSION=5.4.15
-MYSQL_VERSION=5.6.11
+NGINX_VERSION=1.5.9
+PHP_VERSION=5.5.8
+MYSQL_VERSION=5.6.15
 MYSQL_PASSWORD="YOURPWHERE"
-PCRE_VERSION=8.32
+PCRE_VERSION=8.34
 NGINX_PARAMS="--with-http_ssl_module --with-pcre=pcre-8.32 --with-http_realip_module --with-http_gzip_static_module --without-http_ssi_module --without-http_userid_module --without-http_auth_basic_module --without-http_geo_module --without-http_map_module --without-http_split_clients_module --without-http_uwsgi_module --without-http_scgi_module --without-http_browser_module"
 PHP_PARAMS="--with-mysql --with-config-file-path=/usr/local/lib/ --with-pdo --with-pdo-mysql --with-mysql-sock=/var/run/mysqld/mysqld.sock --enable-fpm --with-zlib --with-pcre --with-pear --enable-fastcgi -with-mcrypt --enable-cli --with-gd"
 
@@ -72,7 +72,7 @@ cd ..
 ##
 groupadd mysql
 useradd -g mysql mysql
-wget -O - "http://cdn.mysql.com/Downloads/MySQL-5.6/mysql-$MYSQL_VERSION.tar.gz" |tar xz
+wget -O - "https://dev.mysql.com/get/Downloads/MySQL-5.6/mysql-$MYSQL_VERSION.tar.gz" |tar xz
 cd mysql-$MYSQL_VERSION
 CFLAGS="$CFLAGS" cmake .
 make && make install
