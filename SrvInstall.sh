@@ -93,6 +93,9 @@ ln -s /tmp/mysql.sock /var/run/mysqld/mysqld.sock
 mysqladmin -u root password $MYSQL_PASSWORD
 /usr/local/mysql/bin/mysql_secure_installation
 
+##
+# Making sure all our software works on startup
+##
 update-rc.d php-fpm defaults
 update-rc.d nginx defaults
 update-rc.d mysql defaults
