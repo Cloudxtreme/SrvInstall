@@ -48,7 +48,7 @@ mkdir /var/{log,www}
 cp $ORIGINAL_DIRECTORY/nginx\ init.d /etc/init.d/nginx
 chmod +x /etc/init.d/nginx
 rm -rf Nginx-config
-mv $ORIGINAL_DIRECTORY/nginx.conf /usr/local/nginx/conf/
+cp $ORIGINAL_DIRECTORY/nginx.conf /usr/local/nginx/conf/
 cd ..
 chown -R www-data:www-data /var/www/
 
