@@ -45,12 +45,12 @@ wget -O - "ftp://ftp.csx.cam.ac.uk/pub/software/programming/pcre/pcre-$PCRE_VERS
 make && make install
 mkdir /usr/local/nginx/sites-enabled
 mkdir /var/{log,www}
-git clone https://github.com/martijngonlag/Nginx-config.git
-cp Nginx-config/nginx /etc/init.d/nginx
+cp $ORIGINAL_DIRECTORY/nginx\ init.d /etc/init.d/nginx
 chmod +x /etc/init.d/nginx
 rm -rf Nginx-config
-ln -s $ORIGINAL_DIRECTORY/nginx.conf /usr/local/nginx/conf/
+mv $ORIGINAL_DIRECTORY/nginx.conf /usr/local/nginx/conf/
 cd ..
+chown -R www-data:www-data /var/www/
 
 
 ##
