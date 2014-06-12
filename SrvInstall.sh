@@ -11,12 +11,6 @@ PCRE_VERSION=8.35
 NGINX_PARAMS="--with-http_ssl_module --with-pcre=pcre-8.35 --with-http_realip_module --with-http_gzip_static_module --without-http_ssi_module --without-http_userid_module --without-http_auth_basic_module --without-http_geo_module --without-http_map_module --without-http_split_clients_module --without-http_uwsgi_module --without-http_scgi_module --without-http_browser_module"
 PHP_PARAMS="--with-mysql --with-config-file-path=/usr/local/lib/ --with-pdo --with-pdo-mysql --with-mysql-sock=/var/run/mysqld/mysqld.sock --enable-fpm --with-zlib --with-pcre --with-pear --enable-fastcgi -with-mcrypt --enable-cli --with-gd"
 
-
-
-
-
-
-
 ### DO NOT EDIT BELOW HERE
 ORIGINAL_DIRECTORY=$PWD
 CFLAGS="-fstack-protector-all -fomit-frame-pointer -Os -pipe -falign-functions=64 -falign-loops=32 -fforce-addr -ffast-math"
@@ -33,7 +27,6 @@ apt-get install git build-essential libssl-dev libxml2-dev libaio1 libaio-dev li
 
 mkdir ~/src
 cd ~/src
-
 
 ##
 # NGINX SETUP
@@ -52,7 +45,6 @@ cp $ORIGINAL_DIRECTORY/nginx.conf /usr/local/nginx/conf/
 cd ..
 chown -R www-data:www-data /var/www/
 
-
 ##
 # PHP SETUP
 ##
@@ -65,7 +57,6 @@ cp sapi/fpm/init.d.php-fpm /etc/init.d/php-fpm
 chmod +x /etc/init.d/php-fpm
 mv /usr/local/etc/php-fpm.conf.default /usr/local/etc/php-fpm.conf
 cd ..
-
 
 ##
 # MYSQL SETUP
